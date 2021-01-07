@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarsRoverChallenge.Rover
+namespace MarsRoverChallenge
 {
-    class DefaultRover : BaseRover
+    class Simulation
     {
-
     }
 }
