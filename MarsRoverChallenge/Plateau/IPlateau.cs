@@ -4,7 +4,9 @@ using System.Text;
 
 namespace MarsRoverChallenge.Plateau
 {
-    interface IPlateau
+    abstract class Plateau
     {
+        public Position boundry;
+        abstract public bool positionIsWithinBounds(Position intendedPosition);
     }
 }

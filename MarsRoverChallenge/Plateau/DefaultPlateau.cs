@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MarsRoverChallenge.Rover;
-
-namespace MarsRoverChallenge.Plateau
+﻿namespace MarsRoverChallenge.Plateau
 {
-    /**
-     * strictly speaking this isnt neccessary
-     */
-    class DefaultPlateau
-    {   
-      public Position boundary { get; }
+    internal class DefaultPlateau : Plateau
+    {
+        public Position boundary { get; }
 
-        private List<RoverEntry> roverList = new List<RoverEntry>();
-        
-       public DefaultPlateau(Position boundary)
+        public DefaultPlateau(Position boundary)
         {
             this.boundary = boundary;
         }
 
-        public void addRover(Position initalPosition, RoverInstruction[] instructions) {
-            roverList.Add(new RoverEntry(new DefaultRover(),initalPosition, instructions));
+        public override bool positionIsWithinBounds(Position intendedPosition)
+        {
+            bool xOutsideBounds = intendedPosition.X > boundary.X || intendedPosition.X < 0;
+            bool yOutsideBounds = intendedPosition.Y > boundary.Y || intendedPosition.Y < 0;
+
+            return !(xOutsideBounds || yOutsideBounds);
         }
     }
 }
