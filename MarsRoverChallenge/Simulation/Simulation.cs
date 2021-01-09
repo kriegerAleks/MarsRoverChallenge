@@ -1,15 +1,30 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarsRoverChallenge
+namespace MarsRoverChallenge.Simulation
 {
-    class Simulation
+    class DefaultSimulation
     {
-        private Plateau.DefaultPlateau p;
-        public Simulation(int gridX, int gridY)
+        private DefaultPlateau plateau;
+        private List<RoverEntry> roverList;
+        public DefaultSimulation(int gridX, int gridY)
         {
-            p = new Plateau.DefaultPlateau(gridX, gridY);
+        }
+        }
+        public void addRover(Position initalPosition, RoverInstruction[] instructions)
+        {
+        }
+
+            /**
+             * run the actual simulation and return the list of the final positions 
+             */
+        public List<Position> runSimulation()
+        {
+        }
+        private Position simulateRoverMovements(RoverEntry roverDetails)
+        {
+        }
         }
     }
 }
