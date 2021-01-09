@@ -1,14 +1,39 @@
+﻿using MarsRoverChallenge.Rover;
+using MarsRoverChallenge.Simulation;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using static MarsRoverChallenge.Rover.RoverInstructions;
 
 namespace MarsRoverChallenge
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Running Default Test For Simulation");
+            var commandList = new string[] { "5 5", " 1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM" };
+            var testInput = String.Join(Environment.NewLine, commandList);
+
+            var (boundPosition, roverList) = parseData(testInput);
+
+            runASimulation(boundPosition, roverList);
         }
-    }
+
+        private static void runASimulation(Position boundPosition, List<(Position, List<RoverInstruction>)> roverList)
+        {
+            var sim = new DefaultSimulation(boundPosition);
+            foreach (var rover in roverList)
+            {
+                var (startPosition, instructionList) = rover;
+                sim.addRover(startPosition, instructionList.ToArray());
+            }
+            Console.WriteLine("Added rovers to simulation");
+            var results = sim.runSimulation();
+            Console.WriteLine("simulation successfully run. Results:");
+            results.ForEach(resultantPosition => Console.WriteLine(resultantPosition));
+        }
+
         private static (Position, List<(Position, List<RoverInstruction>)>) parseData(string data)
         {
             var lines = data.Split(Environment.NewLine);
@@ -39,3 +64,4 @@ namespace MarsRoverChallenge
             return (boundryPoint, itemList);
         }
     }
+}
