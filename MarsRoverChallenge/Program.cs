@@ -12,7 +12,7 @@ namespace MarsRoverChallenge
         private static void Main(string[] args)
         {
             Console.WriteLine("Running Default Test For Simulation");
-            var commandList = new string[] { "5 5", " 1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM" };
+            var commandList = new string[] { "5 5", "1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM" };
             var testInput = String.Join(Environment.NewLine, commandList);
 
             var (boundPosition, roverList) = parseData(testInput);
@@ -32,6 +32,8 @@ namespace MarsRoverChallenge
             var results = sim.runSimulation();
             Console.WriteLine("simulation successfully run. Results:");
             results.ForEach(resultantPosition => Console.WriteLine(resultantPosition));
+
+            Console.WriteLine("Results Finished");
         }
 
         private static (Position, List<(Position, List<RoverInstruction>)>) parseData(string data)
