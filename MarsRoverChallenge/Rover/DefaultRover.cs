@@ -1,38 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
 
 namespace MarsRoverChallenge.Rover
 {
-    class DefaultRover : BaseRover
+    internal class DefaultRover : BaseRover
     {
-
-
         /*
          This returns the position the rover would be moving to
          */
         public override Position move(Position currentPosition, RoverInstruction command)
         {
 
+        public override Position move(Position currentPosition, RoverInstruction command)
+        {
             switch (command)
             {
                 case RoverInstruction.Left:
                 case RoverInstruction.Right:
                     return turn(currentPosition, command);
+
                 default:
                     return moveForward(currentPosition);
+            }
+        }
+        private Position moveForward(Position currentPosition)
+        {
+            var (X, Y, facing) = currentPosition;
 
+            switch (currentPosition.facing)
+            {
+                case Direction.North:
+                    Y += 1;
+                    break;
+
+                case Direction.East:
+                    X += 1;
+                    break;
+
+                case Direction.South:
+                    Y -= 1;
+                    break;
+
+                case Direction.West:
+                    X -= 1;
+                    break;
             }
 
-
-        }
-
-        public override bool isValidPosition(Position intendedPosition, Position boundPosition)
-        {
-            bool xOutsideBounds = intendedPosition.X > boundPosition.X || intendedPosition.X < 0;
-            bool yOutsideBounds = intendedPosition.Y > boundPosition.Y || intendedPosition.Y < 0;
-
-            return xOutsideBounds || yOutsideBounds;
+            return new Position(X, Y, facing);
         }
 
         private Position turn(Position currentPosition, RoverInstruction turnDirection)
@@ -43,6 +56,7 @@ namespace MarsRoverChallenge.Rover
                 case RoverInstruction.Left:
                     facing = (int)currentPosition.facing - 1;
                     break;
+
                 case RoverInstruction.Right:
                     facing = (int)currentPosition.facing - 1;
                     break;
@@ -51,31 +65,5 @@ namespace MarsRoverChallenge.Rover
 
             return new Position(currentPosition.X, currentPosition.Y, newFacing);
         }
-
-        private Position moveForward(Position currentPosition)
-        {
-            var (X, Y, facing) = currentPosition;
-
-
-            switch (currentPosition.facing)
-            {
-                case Direction.North:
-                    Y += 1;
-                    break;
-                case Direction.East:
-                    X += 1;
-                    break;
-                case Direction.South:
-                    Y -= 1;
-                    break;
-                case Direction.West:
-                    X -= 1;
-                    break;
-            }
-
-            return new Position(X, Y, facing);
-        }
-
-
     }
 }
