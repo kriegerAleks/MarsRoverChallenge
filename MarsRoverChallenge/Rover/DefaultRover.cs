@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace MarsRoverChallenge.Rover
 {
@@ -7,8 +7,11 @@ namespace MarsRoverChallenge.Rover
         /*
          This returns the position the rover would be moving to
          */
-        public override Position move(Position currentPosition, RoverInstruction command)
+
+        public override bool isValidPosition(bool isOutsideBounds)
         {
+            return !isOutsideBounds;
+        }
 
         public override Position move(Position currentPosition, RoverInstruction command)
         {

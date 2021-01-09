@@ -1,4 +1,4 @@
-namespace MarsRoverChallenge.Rover
+﻿namespace MarsRoverChallenge.Rover
 {
     internal abstract class BaseRover
     /**
@@ -18,5 +18,6 @@ namespace MarsRoverChallenge.Rover
          * need to decide if it should move to an out of bounds position
          */
 
+        public abstract bool isValidPosition(bool isInsideBounds);
     }
 }
