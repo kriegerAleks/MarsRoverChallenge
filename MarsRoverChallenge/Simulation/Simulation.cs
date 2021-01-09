@@ -1,6 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MarsRoverChallenge.Rover;
+using MarsRoverChallenge.Plateau;
+using System.Linq;
 
 namespace MarsRoverChallenge.Simulation
 {
@@ -10,10 +13,16 @@ namespace MarsRoverChallenge.Simulation
         private List<RoverEntry> roverList;
         public DefaultSimulation(int gridX, int gridY)
         {
+            plateau = new DefaultPlateau(new Position(gridX, gridY));
         }
+
+        public DefaultSimulation(Position boundryPoint)
+        {
+            plateau = new DefaultPlateau(boundryPoint);
         }
         public void addRover(Position initalPosition, RoverInstruction[] instructions)
         {
+            roverList.Add(new RoverEntry(new DefaultRover(), initalPosition, instructions));
         }
 
             /**
@@ -21,10 +30,25 @@ namespace MarsRoverChallenge.Simulation
              */
         public List<Position> runSimulation()
         {
+            return roverList.Select(x => simulateRoverMovements(x)).ToList();
         }
+
         private Position simulateRoverMovements(RoverEntry roverDetails)
         {
-        }
+            // TODO: Separate out current and start positions
+            var( rover, currentPosition, insturctions ) = roverDetails;
+            
+            foreach (var instruction in insturctions)
+            {
+                var newPosition =  rover.move(currentPosition, instruction);
+                var newPositionOnPlateau = plateau.positionIsWithinBounds(newPosition);
+                var roverCanMoveToNewPosition = rover.isValidPosition(newPositionOnPlateau);
+                if (roverCanMoveToNewPosition)
+                {
+                    currentPosition = newPosition;
+                }
+            }
+            return currentPosition;
         }
     }
 }
