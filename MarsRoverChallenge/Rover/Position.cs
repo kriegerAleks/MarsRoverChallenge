@@ -15,9 +15,9 @@ namespace MarsRoverChallenge
         }
 
         public Direction facing { get; set; }
-        public int X { get; }
+        public int X { get; set; }
 
-        public int Y { get; }
+        public int Y { get; set; }
 
         /**
          * can be nulled if not needed
