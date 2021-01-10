@@ -48,12 +48,25 @@ This application needs to be easy to maintain and should be able to include mult
 # Implementation
 
 ### note
-This was given to me as a technical assessment. As such I have made certain assumptions and been able to structure the bushiness context such that I can build it out a fair bit more than what would be necessary if I only needed to do 
+This was given to me as a technical assessment. As such I have made certain assumptions and been able to structure the bushiness context such that I can build it out a fair bit more than what would be necessary if I only needed to do as has been determined by the context. I also feel that it best demonstrates my coding abilities and thinking in a more complex situation. I have also chosen to be more detailed in my thinking to demonstrate the nuances that I see in this situation.
 
 ## Language 
 Any backend language is feasible. This would even be possible with frontend frameworks and languages but again as this is for a technical assessment for a c# position and as I already am familiar with node, C#, Java , TS at this point I have chosen C#. 
 
 The other consideration again comes down to the fact that my main languages are TS/JS and C# and C# doesn't have the same issues that JS/TS do and is slightly easier to debug in this particular context. As such I have chosen to go with C# and use it as both a learning experience and a chance to play around with the language and its features. Though this does mean that dev itself will be slower than normal because research will need to be done quite a bit its still a good choice I think. Especially given that I will probably need to learn the language at any rate
+## Development Approach
+As this is going to be a relatively long project I will be doing it in chunks over the course of time.
+## Application Design
+This application will be broken down as follows
+
+### Simulation class
+Used to contain the actual simulation. This will also be the one responsible for calling into the various classes and running the checks to move the rovers around and will report their final positions
+### Plateau Class
+Plateau will be responsible for representing the area within which this takes palace, it will represent the bounds as well as a points validity within those bounds
+### Rover Class
+The rover class will represent the rovers. This will be responsible for controlling the way in which the rover responds to commands as well as taking the final decision on wether or not a rover will move to a point
+### Main/Program class
+This will be responsible for taking the user input parsing it and then instantiating and running the simulation as well as outputting the results.
 ## Application Algorithm
 ### General algorithm description
 Basically take some kind of text input. Parse that to create the internal objects needed to run a simulation. Create a simulation with the given boundary point. For each rover and its concomitant instruction set feed them into the simulation one by one and run the simulation. This then causes the simulation to go through the rovers one by one and run the instructions that have been given for each one in order. This is done by feeding an instruction to the rover and finding the new position in space that the rover intends to occupy. Position here is X, Y, Facing. That position is then checked for validity by the plateau and the result is fed to the rover which then ultimately returns a value deciding if it will be moving to the new position or not. This is repeated for ever instruction and then for every rover creating a list of final positions. This list is then printed to the Console.
