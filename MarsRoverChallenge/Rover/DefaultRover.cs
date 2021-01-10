@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace MarsRoverChallenge.Rover
 {
@@ -61,7 +61,7 @@ namespace MarsRoverChallenge.Rover
                     break;
 
                 case RoverInstruction.Right:
-                    facing = (int)currentPosition.facing - 1;
+                    facing = (int)currentPosition.facing + 1;
                     break;
             }
 
