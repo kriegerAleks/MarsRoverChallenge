@@ -30,7 +30,7 @@ namespace MarsRoverChallenge.Simulation
              */
         public List<Position> runSimulation()
         {
-            return roverList.Select(x => simulateRoverMovements(x)).ToList();
+            return roverList.Select(rover => simulateRoverMovements(rover)).ToList();
         }
 
         private Position simulateRoverMovements(RoverEntry roverDetails)
