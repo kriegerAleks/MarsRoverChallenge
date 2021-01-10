@@ -8,9 +8,9 @@ namespace MarsRoverChallenge.Rover
          This returns the position the rover would be moving to
          */
 
-        public override bool isValidPosition(bool isOutsideBounds)
+        public override bool isValidPosition(bool isInsideBounds)
         {
-            return !isOutsideBounds;
+            return isInsideBounds;
         }
 
         public override Position move(Position currentPosition, RoverInstruction command)
