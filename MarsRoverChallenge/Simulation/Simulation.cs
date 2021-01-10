@@ -10,7 +10,7 @@ namespace MarsRoverChallenge.Simulation
     class DefaultSimulation
     {
         private DefaultPlateau plateau;
-        private List<RoverEntry> roverList;
+        private List<RoverEntry> roverList = new List<RoverEntry>();
         public DefaultSimulation(int gridX, int gridY)
         {
             plateau = new DefaultPlateau(new Position(gridX, gridY));
