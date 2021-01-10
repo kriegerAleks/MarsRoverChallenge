@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MarsRoverChallenge.Rover
 {
@@ -64,7 +64,10 @@ namespace MarsRoverChallenge.Rover
                     facing = (int)currentPosition.facing - 1;
                     break;
             }
-            Direction newFacing = (Direction)(Math.Abs(facing) % 4);
+
+            facing = facing < 0 ? 3 : facing;
+
+            Direction newFacing = (Direction)(facing % 4);
 
             return new Position(currentPosition.X, currentPosition.Y, newFacing);
         }
