@@ -22,6 +22,7 @@ namespace MarsRoverChallenge
         /**
          * can be nulled if not needed
          */
+
         public void Deconstruct(out int X, out int Y, out Direction facing)
         {
             X = this.X;

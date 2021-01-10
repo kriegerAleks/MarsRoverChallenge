@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MarsRoverChallenge.Rover
+﻿namespace MarsRoverChallenge.Rover
 {
     internal class DefaultRover : BaseRover
     {
@@ -25,6 +23,7 @@ namespace MarsRoverChallenge.Rover
                     return moveForward(currentPosition);
             }
         }
+
         private Position moveForward(Position currentPosition)
         {
             var (X, Y, facing) = currentPosition;

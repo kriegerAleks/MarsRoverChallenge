@@ -14,6 +14,7 @@ namespace MarsRoverChallenge.Simulation
         public Position currentPosition { get; set; }
         public RoverInstruction[] instructions { get; }
         public BaseRover rover { get; }
+
         public void Deconstruct(out BaseRover rover, out Position currentPosition, out RoverInstruction[] instructions)
         {
             rover = this.rover;
