@@ -6,7 +6,7 @@ namespace MarsRoverChallenge.Plateau
 {
     abstract class Plateau
     {
-        public Position boundry;
+        public Position boundary;
         abstract public bool positionIsWithinBounds(Position intendedPosition);
     }
 }

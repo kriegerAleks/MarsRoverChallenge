@@ -2,11 +2,9 @@
 {
     internal class DefaultPlateau : Plateau
     {
-        public Position boundary { get; }
-
-        public DefaultPlateau(Position boundary)
+        public DefaultPlateau(Position boooundary)
         {
-            this.boundary = boundary;
+            this.boundary = boooundary;
         }
 
         public override bool positionIsWithinBounds(Position intendedPosition)
