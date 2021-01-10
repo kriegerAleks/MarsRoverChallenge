@@ -16,9 +16,9 @@ namespace MarsRoverChallenge.Simulation
             plateau = new DefaultPlateau(new Position(gridX, gridY));
         }
 
-        public DefaultSimulation(Position boundryPoint)
+        public DefaultSimulation(Position boundaryPoint)
         {
-            plateau = new DefaultPlateau(boundryPoint);
+            plateau = new DefaultPlateau(boundaryPoint);
         }
         public void addRover(Position initalPosition, RoverInstruction[] instructions)
         {
