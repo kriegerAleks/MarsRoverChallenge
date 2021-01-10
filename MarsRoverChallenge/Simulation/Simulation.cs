@@ -7,10 +7,12 @@ using System.Linq;
 
 namespace MarsRoverChallenge.Simulation
 {
-    class DefaultSimulation
+    class DefaultSimulation : ISimulation
     {
-        private DefaultPlateau plateau;
-        private List<RoverEntry> roverList = new List<RoverEntry>();
+        public DefaultPlateau plateau {  get;  set;  }
+
+        public List<RoverEntry> roverList { get; set; } = new List<RoverEntry>();
+
         public DefaultSimulation(int gridX, int gridY)
         {
             plateau = new DefaultPlateau(new Position(gridX, gridY));
