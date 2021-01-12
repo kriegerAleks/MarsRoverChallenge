@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MarsRoverChallengeTestProject.Simulation
 {
-    class Simulation
+    class SimulationTests
     {
     }
 }
