@@ -29,6 +29,12 @@ namespace MarsRoverChallenge
             Y = this.Y;
             facing = this.facing;
         }
+        
+        public void Deconstruct(out int X , out int Y)
+        {
+            X = this.X;
+            Y = this.Y;
+        }
 
         public override string ToString() => $"{X} {Y} {facing}";
     }
