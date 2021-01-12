@@ -1,4 +1,4 @@
-using Xunit;
+﻿using Xunit;
 using MarsRoverChallenge.Rover;
 using MarsRoverChallenge;
 
@@ -45,7 +45,12 @@ namespace MarsRoverChallengeTestProject.Rover
             Assert.True(Facing == facing);
         }
 
-    class Position
-    {
+        [Fact]
+        public void Deconstruct_CanReturnOnlyXAndY()
+        {
+            Position testPosition = new Position(X, Y, Facing);
+
+            (int x, int y) = testPosition;
+        }
     }
 }
