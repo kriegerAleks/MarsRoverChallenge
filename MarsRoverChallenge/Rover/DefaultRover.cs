@@ -1,6 +1,6 @@
 ﻿namespace MarsRoverChallenge.Rover
 {
-    internal class DefaultRover : BaseRover
+    public class DefaultRover : BaseRover
     {
         /*
          This returns the position the rover would be moving to
