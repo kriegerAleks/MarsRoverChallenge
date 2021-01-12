@@ -2,7 +2,7 @@
 
 namespace MarsRoverChallenge.Simulation
 {
-    internal struct RoverEntry
+    public struct RoverEntry
     {
         public RoverEntry(BaseRover rover, Position currentPosition, RoverInstruction[] instructions)
         {

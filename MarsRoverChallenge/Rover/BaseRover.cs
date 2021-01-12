@@ -1,6 +1,6 @@
 ﻿namespace MarsRoverChallenge.Rover
 {
-    internal abstract class BaseRover
+    public abstract class BaseRover
     /**
      *  This is meant to represent the base classes for any future rover implementations
      */

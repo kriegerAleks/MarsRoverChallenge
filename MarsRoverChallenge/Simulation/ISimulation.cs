@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MarsRoverChallenge.Simulation
 {
-    internal interface ISimulation
+    public interface ISimulation
     {
         DefaultPlateau plateau { get; set; }
         List<RoverEntry> roverList { get; set; }

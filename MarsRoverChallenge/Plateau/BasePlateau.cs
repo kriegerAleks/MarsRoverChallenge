@@ -1,6 +1,6 @@
 ﻿namespace MarsRoverChallenge.Plateau
 {
-    internal abstract class BasePlateau
+    public abstract class BasePlateau
     {
         public Position boundary;
 

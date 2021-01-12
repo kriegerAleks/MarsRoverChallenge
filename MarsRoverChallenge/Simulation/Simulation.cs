@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MarsRoverChallenge.Simulation
 {
-    internal class DefaultSimulation : ISimulation
+    public class DefaultSimulation : ISimulation
     {
         public DefaultPlateau plateau { get; set; }
 

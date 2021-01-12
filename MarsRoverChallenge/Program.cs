@@ -7,7 +7,7 @@ using static MarsRoverChallenge.Rover.RoverInstructions;
 
 namespace MarsRoverChallenge
 {
-    internal class Program
+    public class Program
     {
         private static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace MarsRoverChallenge
             runASimulation(boundPosition, roverList);
         }
 
-        private static void runASimulation(Position boundPosition, List<(Position, List<RoverInstruction>)> roverList)
+        public static void runASimulation(Position boundPosition, List<(Position, List<RoverInstruction>)> roverList)
         {
             var sim = new DefaultSimulation(boundPosition);
             foreach (var rover in roverList)
@@ -36,7 +36,7 @@ namespace MarsRoverChallenge
             Console.WriteLine("Results Finished");
         }
 
-        private static (Position, List<(Position, List<RoverInstruction>)>) parseData(string data)
+        public static (Position, List<(Position, List<RoverInstruction>)>) parseData(string data)
         {
             var lines = data.Split(Environment.NewLine);
 
