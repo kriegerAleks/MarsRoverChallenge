@@ -8,7 +8,7 @@
         West
     }
 
-    internal static class Directions
+    public static class Directions
     {
         /**
          * TODO:  There should be a better way to do this. I know that its possible
@@ -36,7 +36,7 @@
                 case 'E': return Direction.East;
                 case 'W': return Direction.West;
                 default:
-                    throw new System.Exception("wrong symmbol");
+                    throw new System.Exception("wrong symbol");
             }
         }
     }
