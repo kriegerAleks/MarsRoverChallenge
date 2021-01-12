@@ -7,7 +7,7 @@
         Right = 'R'
     }
 
-    internal class RoverInstructions
+    public class RoverInstructions
     {
         public static RoverInstruction ConvertValueToInstruction(char value)
         {
