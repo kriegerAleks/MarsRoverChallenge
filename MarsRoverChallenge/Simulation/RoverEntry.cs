@@ -4,7 +4,7 @@ namespace MarsRoverChallenge.Simulation
 {
     public struct RoverEntry
     {
-        public RoverEntry(BaseRover rover, Position currentPosition, RoverInstruction[] instructions)
+        public RoverEntry(IRover rover, Position currentPosition, RoverInstruction[] instructions)
         {
             this.rover = rover;
             this.currentPosition = currentPosition;
@@ -13,9 +13,9 @@ namespace MarsRoverChallenge.Simulation
 
         public Position currentPosition { get; set; }
         public RoverInstruction[] instructions { get; }
-        public BaseRover rover { get; }
+        public IRover rover { get; }
 
-        public void Deconstruct(out BaseRover rover, out Position currentPosition, out RoverInstruction[] instructions)
+        public void Deconstruct(out IRover rover, out Position currentPosition, out RoverInstruction[] instructions)
         {
             rover = this.rover;
             currentPosition = this.currentPosition;

@@ -1,17 +1,17 @@
 ﻿namespace MarsRoverChallenge.Rover
 {
-    public class DefaultRover : BaseRover
+    public class DefaultRover : IRover
     {
         /*
          This returns the position the rover would be moving to
          */
 
-        public override bool isValidPosition(bool isInsideBounds)
+        public bool isValidPosition(bool isInsideBounds)
         {
             return isInsideBounds;
         }
 
-        public override Position move(Position currentPosition, RoverInstruction command)
+        public  Position move(Position currentPosition, RoverInstruction command)
         {
             switch (command)
             {

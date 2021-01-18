@@ -11,7 +11,7 @@ namespace MarsRoverChallengeTestProject.Simulation
     public class RoverEntryTests
     {
 
-        private static BaseRover DefaultRover = new DefaultRover();
+        private static DefaultRover DefaultRover = new DefaultRover();
         private static Direction DefaultFacing = Direction.East;
         private static Position DefaultPosition = new Position(0, 1,DefaultFacing);
 

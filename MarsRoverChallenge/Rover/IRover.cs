@@ -1,6 +1,6 @@
 ﻿namespace MarsRoverChallenge.Rover
 {
-    public abstract class BaseRover
+    public interface IRover
     /**
      *  This is meant to represent the base classes for any future rover implementations
      */
@@ -11,13 +11,13 @@
          *  move in different ways
         */
 
-        public abstract Position move(Position currentPosition, RoverInstruction command);
+        public Position move(Position currentPosition, RoverInstruction command);
 
         /**
          * Because in reality a rover is responsible for ensuring it does not fall off a cliff, it will
          * need to decide if it should move to an out of bounds position
          */
 
-        public abstract bool isValidPosition(bool isInsideBounds);
+        public bool isValidPosition(bool isInsideBounds);
     }
 }
