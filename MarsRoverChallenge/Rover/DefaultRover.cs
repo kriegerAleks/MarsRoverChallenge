@@ -6,12 +6,12 @@
          This returns the position the rover would be moving to
          */
 
-        public bool isValidPosition(bool isInsideBounds)
+        public bool IsValidPosition(bool isInsideBounds)
         {
             return isInsideBounds;
         }
 
-        public  Position move(Position currentPosition, RoverInstruction command)
+        public  Position Move(Position currentPosition, RoverInstruction command)
         {
             switch (command)
             {

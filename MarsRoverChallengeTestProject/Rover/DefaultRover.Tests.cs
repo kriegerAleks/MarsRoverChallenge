@@ -23,7 +23,7 @@ namespace MarsRoverChallengeTestProject.Rover
             var testRover = GetDefaultRover();
             var isValidPosition = true;
 
-            var isValidPositionForRover = testRover.isValidPosition(isValidPosition);
+            var isValidPositionForRover = testRover.IsValidPosition(isValidPosition);
 
             Assert.True(isValidPositionForRover);
         }
@@ -34,7 +34,7 @@ namespace MarsRoverChallengeTestProject.Rover
             var testRover = GetDefaultRover();
             var isInvalidPosition = false;
 
-            var isValidPositionForRover = testRover.isValidPosition(isInvalidPosition);
+            var isValidPositionForRover = testRover.IsValidPosition(isInvalidPosition);
 
             Assert.False(isValidPositionForRover);
         }
@@ -51,7 +51,7 @@ namespace MarsRoverChallengeTestProject.Rover
             var initialPosition = GetInitialPosition(facing);
             var testRover = GetDefaultRover();
 
-            var testPosition = testRover.move(initialPosition, MOVE );
+            var testPosition = testRover.Move(initialPosition, MOVE );
 
             Assert.True(testPosition.facing == facing, "Position should remain the same after movement");
             Assert.True(testPosition.X == expectedX, $"when {facing}: X {expectedX} == actualX {testPosition.X}");
@@ -73,7 +73,7 @@ namespace MarsRoverChallengeTestProject.Rover
             var testRover = GetDefaultRover();
             var testPosition = GetInitialPosition( currentDirection);
 
-            Position movementResult = testRover.move(testPosition, turnDirection);
+            Position movementResult = testRover.Move(testPosition, turnDirection);
 
             Assert.True(movementResult.facing == expectedFacing); ;
 

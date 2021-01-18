@@ -11,13 +11,13 @@
          *  move in different ways
         */
 
-        public Position move(Position currentPosition, RoverInstruction command);
+        public Position Move(Position currentPosition, RoverInstruction command);
 
         /**
          * Because in reality a rover is responsible for ensuring it does not fall off a cliff, it will
          * need to decide if it should move to an out of bounds position
          */
 
-        public bool isValidPosition(bool isInsideBounds);
+        public bool IsValidPosition(bool isInsideBounds);
     }
 }
