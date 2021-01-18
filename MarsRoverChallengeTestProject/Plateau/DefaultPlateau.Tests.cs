@@ -29,7 +29,7 @@ namespace MarsRoverChallengeTestProject.Plateau
             var plateau = createPlateau();
             var TestingPosition = new Position(x, y);
 
-            var isWithinBounds = plateau.positionIsWithinBounds(TestingPosition);
+            var isWithinBounds = plateau.PositionIsWithinBounds(TestingPosition);
 
             Assert.True(isWithinBounds);
         }
@@ -45,7 +45,7 @@ namespace MarsRoverChallengeTestProject.Plateau
             var plateau = createPlateau();
             var TestingPosition = new Position(x, y);
 
-            var isWithinBounds = plateau.positionIsWithinBounds(TestingPosition);
+            var isWithinBounds = plateau.PositionIsWithinBounds(TestingPosition);
 
             Assert.False(isWithinBounds);
         }

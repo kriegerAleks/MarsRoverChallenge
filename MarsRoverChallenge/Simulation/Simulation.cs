@@ -43,7 +43,7 @@ namespace MarsRoverChallenge.Simulation
             foreach (var instruction in insturctions)
             {
                 var newPosition = rover.move(currentPosition, instruction);
-                var newPositionOnPlateau = plateau.positionIsWithinBounds(newPosition);
+                var newPositionOnPlateau = plateau.PositionIsWithinBounds(newPosition);
                 var roverCanMoveToNewPosition = rover.isValidPosition(newPositionOnPlateau);
                 if (roverCanMoveToNewPosition)
                 {

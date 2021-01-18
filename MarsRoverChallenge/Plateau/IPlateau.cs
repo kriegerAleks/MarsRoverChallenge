@@ -1,9 +1,9 @@
 ﻿namespace MarsRoverChallenge.Plateau
 {
-    public interface BasePlateau
+    public interface IPlateau
     {
         public Position boundary { get; set; }
 
-        public bool positionIsWithinBounds(Position intendedPosition);
+        public bool PositionIsWithinBounds(Position intendedPosition);
     }
 }
