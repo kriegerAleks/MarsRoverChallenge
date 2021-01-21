@@ -15,7 +15,7 @@ namespace MarsRoverChallengeTestProject.Rover
         [InlineData(Direction.West, 'W')]
         public void convertFromDirection_PrintsProperly(Direction direction , char ExpectedResult)
         {
-            char TestResult = Directions.convertFromDirection(direction);
+            char TestResult = Directions.ConvertFromDirection(direction);
 
             Assert.True(TestResult == ExpectedResult);
         }
@@ -27,7 +27,7 @@ namespace MarsRoverChallengeTestProject.Rover
         [InlineData(Direction.West, 'W')]
         public void convertToDirection_ReturnsDirection_WhenValidValue(Direction ExpectedDirection , char toBeConvertedToDirection)
         {
-            Direction TestDirection = Directions.convertToDirection(toBeConvertedToDirection);
+            Direction TestDirection = Directions.ConvertToDirection(toBeConvertedToDirection);
 
             Assert.True(TestDirection == ExpectedDirection);
         }
@@ -39,7 +39,7 @@ namespace MarsRoverChallengeTestProject.Rover
             Exception caughtException = null;
             try 
             {
-                emptyDirection = Directions.convertToDirection('X');
+                emptyDirection = Directions.ConvertToDirection('X');
             }
             catch (Exception cException)
             {

@@ -54,7 +54,7 @@ namespace MarsRoverChallenge
                 var roverDetails = lines[currentItemIndex].Split(' ');
                 var x = int.Parse(roverDetails[0]);
                 var y = int.Parse(roverDetails[1]);
-                var direction = Directions.convertToDirection(roverDetails[2][0]);
+                var direction = Directions.ConvertToDirection(roverDetails[2][0]);
 
                 var position = new Position(x, y, direction);
 

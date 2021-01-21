@@ -16,7 +16,8 @@
          * to override the default conversion from / to strings and numbers
          */
 
-        public static char convertFromDirection(Direction direction)
+
+        public static char ConvertFromDirection(Direction direction)
         {
             switch (direction)
             {
@@ -27,7 +28,7 @@
             }
         }
 
-        public static Direction convertToDirection(char stringDirection)
+        public static Direction ConvertToDirection(char stringDirection)
         {
             switch (stringDirection)
             {
