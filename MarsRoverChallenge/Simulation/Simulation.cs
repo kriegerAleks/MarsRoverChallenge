@@ -32,15 +32,15 @@ namespace MarsRoverChallenge.Simulation
 
         public List<Position> RunSimulation()
         {
-            return roverList.Select(rover => simulateRoverMovements(rover)).ToList();
+            return roverList.Select(rover => SimulateRoverMovements(rover)).ToList();
         }
 
-        private Position simulateRoverMovements(RoverEntry roverDetails)
+        private Position SimulateRoverMovements(RoverEntry roverDetails)
         {
             // TODO: Separate out current and start positions
             var (rover, currentPosition, insturctions) = roverDetails;
 
-            foreach (var instruction in insturctions)
+            foreach (RoverInstruction instruction in insturctions)
             {
                 var newPosition = rover.Move(currentPosition, instruction);
                 var newPositionOnPlateau = plateau.PositionIsWithinBounds(newPosition);
