@@ -26,10 +26,10 @@ namespace MarsRoverChallenge
             foreach (var rover in roverList)
             {
                 var (startPosition, instructionList) = rover;
-                sim.addRover(startPosition, instructionList.ToArray());
+                sim.AddRover(startPosition, instructionList.ToArray());
             }
             Console.WriteLine("Added rovers to simulation");
-            var results = sim.runSimulation();
+            var results = sim.RunSimulation();
             Console.WriteLine("simulation successfully run. Results:");
             results.ForEach(resultantPosition => Console.WriteLine(resultantPosition));
 

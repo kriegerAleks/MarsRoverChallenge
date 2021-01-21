@@ -39,7 +39,7 @@ namespace MarsRoverChallengeTestProject.Simulation
             var roverInitialPosition = new Position(0, 0);
             var roverInstructions = new RoverInstruction[] { RoverInstruction.Left, RoverInstruction.Move };
 
-            createdSimulation.addRover(roverInitialPosition, roverInstructions);
+            createdSimulation.AddRover(roverInitialPosition, roverInstructions);
 
             var (rover, currentPosition, instructionList) = createdSimulation.roverList[0];
 
@@ -123,10 +123,10 @@ namespace MarsRoverChallengeTestProject.Simulation
 
             foreach (var RoverEntry in simulationDetails.roverList)
             {
-                testSimulation.addRover(RoverEntry.initialPosition, RoverEntry.instructions);
+                testSimulation.AddRover(RoverEntry.initialPosition, RoverEntry.instructions);
             }
 
-            var results = testSimulation.runSimulation();
+            var results = testSimulation.RunSimulation();
 
             var comparedResultList = results.Select((result, index) =>
             {

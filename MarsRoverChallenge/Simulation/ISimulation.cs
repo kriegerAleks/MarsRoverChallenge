@@ -6,11 +6,11 @@ namespace MarsRoverChallenge.Simulation
 {
     public interface ISimulation
     {
-        DefaultPlateau plateau { get; set; }
-        List<RoverEntry> roverList { get; set; }
+        public DefaultPlateau plateau { get; set; }
+        public List<RoverEntry> roverList { get; set; }
 
-        abstract void addRover(Position initialPosition, RoverInstruction[] instructions);
+        public void AddRover(Position initialPosition, RoverInstruction[] instructions);
 
-        abstract List<Position> runSimulation();
+        public List<Position> RunSimulation();
     }
 }

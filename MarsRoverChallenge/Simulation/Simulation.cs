@@ -21,7 +21,7 @@ namespace MarsRoverChallenge.Simulation
             plateau = new DefaultPlateau(boundaryPoint);
         }
 
-        public void addRover(Position initalPosition, RoverInstruction[] instructions)
+        public void AddRover(Position initalPosition, RoverInstruction[] instructions)
         {
             roverList.Add(new RoverEntry(new DefaultRover(), initalPosition, instructions));
         }
@@ -30,7 +30,7 @@ namespace MarsRoverChallenge.Simulation
          * run the actual simulation and return the list of the final positions
          */
 
-        public List<Position> runSimulation()
+        public List<Position> RunSimulation()
         {
             return roverList.Select(rover => simulateRoverMovements(rover)).ToList();
         }
