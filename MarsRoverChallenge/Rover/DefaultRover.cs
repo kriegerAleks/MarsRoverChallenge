@@ -17,14 +17,14 @@
             {
                 case RoverInstruction.Left:
                 case RoverInstruction.Right:
-                    return turn(currentPosition, command);
+                    return Turn(currentPosition, command);
 
                 default:
-                    return moveForward(currentPosition);
+                    return MoveForward(currentPosition);
             }
         }
 
-        private Position moveForward(Position currentPosition)
+        private Position MoveForward(Position currentPosition)
         {
             var (X, Y, facing) = currentPosition;
 
@@ -50,7 +50,7 @@
             return new Position(X, Y, facing);
         }
 
-        private Position turn(Position currentPosition, RoverInstruction turnDirection)
+        private Position Turn(Position currentPosition, RoverInstruction turnDirection)
         {
             int facing = 0;
             switch (turnDirection)
